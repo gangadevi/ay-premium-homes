@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | AY Premium Homes</title>
+  <link rel="icon" type="image/png" href="/assets/images/logo/Web_AY_Logo.png">
+  <meta name="description" content="Explore AY Premium Homes' portfolio of luxury residential developments.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body data-page="projects">
+
+  <div id="site-header"></div>
+
+  <main class="ay-page-main">
+
+    <section class="ay-hero" aria-label="Our project portfolio">
+      <h1 class="visually-hidden" id="projects-heading">Our Projects</h1>
+      <div class="swiper js-hero-slider">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide ay-page-hero ay-page-hero--clean">
+            <div class="ay-page-hero__media">
+              <img src="/assets/images/projects/ProjectPageBanner_1.jpg" alt="Lakeview apartment interior at Luxury Lake View Apartment, Huskur" width="1920" height="1080" loading="eager" fetchpriority="high" decoding="async">
+            </div>
+          </div>
+
+          <div class="swiper-slide ay-page-hero ay-page-hero--clean">
+            <div class="ay-page-hero__media">
+              <img src="/assets/images/projects/ProjectPageBanner_2.jpg" alt="Illustration of the 270-degree cross-ventilation design across the Huskur residences" width="1920" height="1080" loading="lazy" decoding="async">
+            </div>
+          </div>
+
+          <div class="swiper-slide ay-page-hero ay-page-hero--clean">
+            <div class="ay-page-hero__media">
+              <img src="/assets/images/projects/ProjectPageBanner_3.png" alt="Luxury villas at dusk in Huskur, illuminated pathways and private balconies" width="1920" height="1080" loading="lazy" decoding="async">
+            </div>
+          </div>
+
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <!-- ================= PROJECT GRID ================= -->
+    <section class="ay-section bg-warm-ivory" aria-labelledby="grid-heading">
+      <div class="container-ay">
+        <div class="ay-project-intro">
+          <p class="ay-eyebrow">Our Portfolio</p>
+          <h2 id="grid-heading" data-aos="fade-up">Discover Premium Communities by AY Premium Homes</h2>
+          <p class="lead">Experience thoughtfully designed apartments and villas that combine elegant architecture, strategic locations, and world-class amenities. Discover homes crafted to elevate your lifestyle while delivering exceptional long-term value.</p>
+        </div>
+
+        <div class="ay-project-filters justify-content-center" role="tablist" aria-label="Filter projects" data-project-filters>
+          <button type="button" class="ay-btn ay-btn--outline is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button type="button" class="ay-btn ay-btn--outline" data-filter="ongoing" role="tab" aria-selected="false">Ongoing</button>
+          <button type="button" class="ay-btn ay-btn--outline" data-filter="completed" role="tab" aria-selected="false">Completed</button>
+          <button type="button" class="ay-btn ay-btn--outline" data-filter="upcoming" role="tab" aria-selected="false">Upcoming</button>
+        </div>
+
+        <div class="row g-4" data-project-grid>
+
+          <div class="col-md-6 col-lg-4" data-status="upcoming" data-aos="fade-up">
+            <article class="ay-project-card ay-project-card--detailed">
+              <a href="/project-details/" class="ay-project-card__media" aria-label="Explore AY Lake Avenue">
+                <img src="/assets/images/projects/AY%20Lake%20Avenue.png" alt="AY Lake Avenue — illuminated modern apartment building with landscaped entrance and palm-lined street at dusk, Bendiganahalli, Huskur" width="1672" height="941" loading="lazy" decoding="async">
+                <span class="ay-project-card__badge ay-project-card__badge--upcoming">Coming Soon</span>
+              </a>
+              <div class="ay-project-card__body">
+                <p class="ay-eyebrow ay-project-card__category">Premium Apartments</p>
+                <h3 class="ay-project-card__name">AY Lake Avenue</h3>
+                <p class="ay-project-card__location"><i class="bi bi-geo-alt" aria-hidden="true"></i> Bendiganahalli, Huskur, Bengaluru</p>
+
+                <dl class="ay-project-card__specs">
+                  <div class="ay-project-card__spec">
+                    <dt><i class="bi bi-door-open" aria-hidden="true"></i> Configuration</dt>
+                    <dd>2, 3 &amp; 4 BHK</dd>
+                  </div>
+                  <div class="ay-project-card__spec">
+                    <dt><i class="bi bi-rulers" aria-hidden="true"></i> Area</dt>
+                    <dd>1300&ndash;2600 Sq.ft</dd>
+                  </div>
+                  <div class="ay-project-card__spec">
+                    <dt><i class="bi bi-hourglass-split" aria-hidden="true"></i> Status</dt>
+                    <dd>Coming Soon</dd>
+                  </div>
+                  <!-- Price hidden for now
+                  <div class="ay-project-card__spec">
+                    <dt><i class="bi bi-tag" aria-hidden="true"></i> Price</dt>
+                    <dd>Coming Soon</dd>
+                  </div>
+                  -->
+                </dl>
+
+                <a href="/project-details/" class="ay-btn ay-btn--primary ay-project-card__cta">Explore Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-status="ongoing" data-aos="fade-up" data-aos-delay="100">
+            <article class="ay-project-card ay-project-card--detailed">
+              <a href="/project-details/" class="ay-project-card__media" aria-label="Explore AY Vaikuntam Medows">
+                <img src="/assets/images/projects/AY%20Vaikuntam%20Medows.png" alt="AY Vaikuntam Medows — aerial view of the apartment complex with landscaped courtyard, swimming pool and gardens at dusk, Huskur" width="1920" height="1072" loading="lazy" decoding="async">
+                <span class="ay-project-card__badge">Under Construction</span>
+              </a>
+              <div class="ay-project-card__body">
+                <p class="ay-eyebrow ay-project-card__category">Premium Apartments</p>
+                <h3 class="ay-project-card__name">AY Vaikuntam Medows</h3>
+                <p class="ay-project-card__location"><i class="bi bi-geo-alt" aria-hidden="true"></i> Huskur, Bengaluru</p>
+
+                <dl class="ay-project-card__specs">
+                  <div class="ay-project-card__spec">
+                    <dt><i class="bi bi-building" aria-hidden="true"></i> Project Type</dt>
+                    <dd>Apartments</dd>
+                  </div>
+                  <div class="ay-project-card__spec">
+                    <dt><i class="bi bi-rulers" aria-hidden="true"></i> Land Area</dt>
+                    <dd>1200&ndash;2600 Sq.ft</dd>
+                  </div>
+                  <div class="ay-project-card__spec">
+                    <dt><i class="bi bi-hourglass-split" aria-hidden="true"></i> Status</dt>
+                    <dd>Under Construction</dd>
+                  </div>
+                  <!-- Price hidden for now
+                  <div class="ay-project-card__spec">
+                    <dt><i class="bi bi-tag" aria-hidden="true"></i> Price</dt>
+                    <dd>Coming Soon</dd>
+                  </div>
+                  -->
+                </dl>
+
+                <a href="/project-details/" class="ay-btn ay-btn--primary ay-project-card__cta">Explore Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-status="completed" data-aos="fade-up" data-aos-delay="200">
+            <article class="ay-project-card ay-project-card--detailed">
+              <a href="/project-details/" class="ay-project-card__media" aria-label="Explore Villa Project">
+                <img src="/assets/images/home/Villas.png" alt="Villa Project — luxury villas along STRR, Bengaluru" width="1672" height="941" loading="lazy" decoding="async">
+                <span class="ay-project-card__badge ay-project-card__badge--completed">Completed</span>
+              </a>
+              <div class="ay-project-card__body">
+                <p class="ay-eyebrow ay-project-card__category">Premium Villas</p>
+                <h3 class="ay-project-card__name">Villa Project</h3>
+                <p class="ay-project-card__location"><i class="bi bi-geo-alt" aria-hidden="true"></i> STRR, Bengaluru</p>
+
+                <dl class="ay-project-card__specs">
+                  <div class="ay-project-card__spec">
+                    <dt><i class="bi bi-building" aria-hidden="true"></i> Project Type</dt>
+                    <dd>Luxury Villas</dd>
+                  </div>
+                  <div class="ay-project-card__spec">
+                    <dt><i class="bi bi-rulers" aria-hidden="true"></i> Land Area</dt>
+                    <dd>30 Acres</dd>
+                  </div>
+                  <div class="ay-project-card__spec">
+                    <dt><i class="bi bi-hourglass-split" aria-hidden="true"></i> Status</dt>
+                    <dd>Completed</dd>
+                  </div>
+                  <!-- Price hidden for now
+                  <div class="ay-project-card__spec">
+                    <dt><i class="bi bi-tag" aria-hidden="true"></i> Price</dt>
+                    <dd>&mdash;</dd>
+                  </div>
+                  -->
+                </dl>
+
+                <a href="/project-details/" class="ay-btn ay-btn--primary ay-project-card__cta">Explore Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="enquiry-modal-root"></div>
+  <div id="floating-buttons-root"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/swiper.js"></script>
+  <script src="/assets/js/email.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!--
+  SHARED ENQUIRY MODAL
+  Injected into <div id="enquiry-modal-root"></div> on every page by main.js.
+  Opened by any element with [data-enquiry-trigger] (header CTA, floating
+  button, in-page "Enquire" links on projects/project-details, etc).
+  Submission is handled by assets/js/email.js via EmailJS — no inline JS.
+-->
+<div class="modal fade ay-modal" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="enquiryModalLabel">Request a Callback</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="enquiryForm" class="ay-enquiry-form" novalidate>
+          <div class="ay-form__group">
+            <label class="ay-form__label" for="enquiryName">Full Name</label>
+            <input class="ay-form__control" type="text" id="enquiryName" name="user_name" required>
+          </div>
+          <div class="ay-form__group">
+            <label class="ay-form__label" for="enquiryPhone">Phone Number</label>
+            <input class="ay-form__control" type="tel" id="enquiryPhone" name="user_phone" required>
+          </div>
+          <div class="ay-form__group">
+            <label class="ay-form__label" for="enquiryEmail">Email Address</label>
+            <input class="ay-form__control" type="email" id="enquiryEmail" name="user_email" required>
+          </div>
+          <div class="ay-form__group">
+            <label class="ay-form__label" for="enquiryProject">Project of Interest</label>
+            <select class="ay-form__control" id="enquiryProject" name="project_interest">
+              <option value="general">General Enquiry</option>
+              <option value="project-1">Featured Project 1</option>
+              <option value="project-2">Featured Project 2</option>
+            </select>
+          </div>
+          <div class="ay-form__group">
+            <label class="ay-form__label" for="enquiryMessage">Message</label>
+            <textarea class="ay-form__control" id="enquiryMessage" name="message" rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="ay-btn ay-btn--primary w-100" data-submit-btn>
+            Submit Enquiry
+          </button>
+          <p class="ay-form__status" data-form-status role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

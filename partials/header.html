@@ -1,0 +1,57 @@
+<!--
+  SHARED HEADER + FULLSCREEN OVERLAY NAV
+  Injected into <div id="site-header"></div> on every page by main.js.
+  data-page attribute on <body> (set per page) drives the "is-active" state
+  below via JS — do not hardcode is-active in this file.
+
+  Structure: a sticky header (logo left) that starts transparent over the
+  hero and gains a solid warm-white surface once the page scrolls past
+  60px (see .ay-header.is-scrolled in style.css).
+
+  ≥992px: a horizontal nav sits on the right with a gold underline hover.
+  <992px: the horizontal nav is hidden and an animated hamburger takes its
+  place, opening a fullscreen overlay nav (initOverlayNav() in main.js).
+  The same button morphs into a close (X) icon — no separate close control.
+-->
+<header class="ay-header" data-site-header>
+  <div class="ay-header__inner">
+    <a href="/" class="ay-header__brand" aria-label="AY Premium Homes — Home">
+      <img class="ay-header__logo ay-header__logo--light" src="/assets/images/logo/Whhite_AY_Logo.png" alt="AY Premium Homes" width="1080" height="1131" decoding="async">
+      <img class="ay-header__logo ay-header__logo--dark" src="/assets/images/logo/Web_AY_Logo.png" alt="AY Premium Homes" width="1080" height="1131" decoding="async">
+    </a>
+
+    <nav class="ay-nav-desktop d-none d-lg-block" aria-label="Primary">
+      <ul class="ay-nav-desktop__list">
+        <li><a data-nav-key="home" href="/">Home</a></li>
+        <li><a data-nav-key="about" href="/about/">About</a></li>
+        <li><a data-nav-key="projects" href="/projects/">Projects</a></li>
+        <li><a data-nav-key="nri" href="/nri/">NRI</a></li>
+        <li><a data-nav-key="careers" href="/careers/">Careers</a></li>
+        <li><a data-nav-key="contact" href="/contact/">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button type="button" class="ay-menu-toggle d-lg-none" data-menu-toggle aria-expanded="false" aria-controls="siteOverlayNav" aria-label="Open menu">
+      <span class="ay-menu-toggle__box" aria-hidden="true">
+        <span class="ay-menu-toggle__line"></span>
+        <span class="ay-menu-toggle__line"></span>
+        <span class="ay-menu-toggle__line"></span>
+      </span>
+    </button>
+  </div>
+</header>
+
+<nav class="ay-overlay-nav" id="siteOverlayNav" data-overlay-nav aria-label="Primary" aria-hidden="true" inert>
+  <div class="ay-overlay-nav__inner">
+    <ul class="ay-overlay-nav__list">
+      <li><a data-nav-key="home" href="/">Home</a></li>
+      <li><a data-nav-key="about" href="/about/">About</a></li>
+      <li><a data-nav-key="projects" href="/projects/">Projects</a></li>
+      <li><a data-nav-key="nri" href="/nri/">NRI</a></li>
+      <li><a data-nav-key="careers" href="/careers/">Careers</a></li>
+      <li><a data-nav-key="contact" href="/contact/">Contact</a></li>
+      <li><a data-nav-key="privacy" href="/privacy-policy/">Privacy Policy</a></li>
+      <li><a data-nav-key="terms" href="/terms/">Terms &amp; Conditions</a></li>
+    </ul>
+  </div>
+</nav>

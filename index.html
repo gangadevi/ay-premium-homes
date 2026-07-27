@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AY Premium Homes | Luxury Real Estate</title>
+  <link rel="icon" type="image/png" href="/assets/images/logo/Web_AY_Logo.png">
+  <meta name="description" content="AY Premium Homes — curated luxury residences and premium real estate developments.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+  <!-- Project CSS (order matters: base tokens, then responsive overrides) -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body data-page="home">
+
+  <!-- Shared header mount point — populated by assets/js/main.js -->
+  <div id="site-header"></div>
+
+  <main class="ay-page-main">
+
+    <!-- ================= HERO ================= -->
+    <section class="ay-hero" aria-label="Featured developments">
+      <h1 class="visually-hidden">A rare address, considered in every detail</h1>
+      <div class="swiper js-hero-slider">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide ay-page-hero ay-page-hero--clean">
+            <div class="ay-page-hero__media">
+              <img src="/assets/images/home/HomePageBanner_1.png" alt="Sunset lake view from a home balcony, with coffee and the morning paper laid out on the table" width="1920" height="1080" loading="eager" fetchpriority="high" decoding="async">
+            </div>
+          </div>
+
+          <div class="swiper-slide ay-page-hero ay-page-hero--clean">
+            <div class="ay-page-hero__media">
+              <img src="/assets/images/home/HomePageBanner_2.jpg" alt="Couple walking with an umbrella through a landscaped lakeside residential community at dusk" width="1920" height="1080" loading="lazy" decoding="async">
+            </div>
+          </div>
+
+          <div class="swiper-slide ay-page-hero ay-page-hero--clean">
+            <div class="ay-page-hero__media">
+              <img src="/assets/images/home/HomePageBanner_3.jpg" alt="Multi-generational family and their dog enjoying a landscaped garden together" width="1920" height="1080" loading="lazy" decoding="async">
+            </div>
+          </div>
+
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+   
+    <!-- ================= STATS (animated counters) ================= -->
+    <section class="ay-section ay-stats" aria-labelledby="stats-heading">
+      <div class="container-ay">
+        <h2 class="visually-hidden" id="stats-heading">AY Premium Homes in numbers</h2>
+        <div class="ay-stats__grid">
+
+          <div class="ay-stat" data-aos="fade-up">
+            <i class="bi bi-award ay-stat__icon" aria-hidden="true"></i>
+            <p class="ay-stat__number"><span class="ay-stat__count" data-counter-to="20" data-counter-suffix="+">0</span></p>
+            <p class="ay-stat__label">Years of Legacy</p>
+          </div>
+
+          <div class="ay-stat" data-aos="fade-up" data-aos-delay="100">
+            <i class="bi bi-buildings ay-stat__icon" aria-hidden="true"></i>
+            <p class="ay-stat__number"><span class="ay-stat__count" data-counter-to="10" data-counter-suffix="+">0</span></p>
+            <p class="ay-stat__label">Projects Delivered</p>
+          </div>
+
+          <div class="ay-stat" data-aos="fade-up" data-aos-delay="200">
+            <i class="bi bi-rulers ay-stat__icon" aria-hidden="true"></i>
+            <p class="ay-stat__number"><span class="ay-stat__count" data-counter-to="25" data-counter-suffix="+">0</span></p>
+            <p class="ay-stat__label">Sq Ft Developed</p>
+          </div>
+
+          <div class="ay-stat" data-aos="fade-up" data-aos-delay="300">
+            <i class="bi bi-people-fill ay-stat__icon" aria-hidden="true"></i>
+            <p class="ay-stat__number"><span class="ay-stat__count" data-counter-to="2" data-counter-suffix="K+">0</span></p>
+            <p class="ay-stat__label">Happy Families</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= INTRO / SIGNATURE STRIP ================= -->
+    <!-- <section class="ay-section bg-warm-ivory" aria-labelledby="intro-heading">
+      <div class="container-ay">
+        <p class="ay-eyebrow">AY Premium Homes</p>
+        <h2 id="intro-heading" data-aos="fade-up">Building rare addresses since inception</h2>
+        <p class="ay-coord">Reference: HOME &mdash; /</p>
+        <!-- TODO: intro copy, key numbers (units delivered, cities, etc.)
+      </div>
+    </section> -->
+
+   
+    <!-- ================= FEATURED PROJECTS ================= -->
+    <section class="ay-section bg-marble" aria-labelledby="projects-heading">
+      <div class="container-ay">
+        <p class="ay-eyebrow">Featured Projects</p>
+        <h2 id="projects-heading">Featured Projects</h2>
+
+        <div class="ay-project-filters" role="tablist" aria-label="Filter featured projects" data-project-filters>
+          <button type="button" class="ay-btn ay-btn--outline is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button type="button" class="ay-btn ay-btn--outline" data-filter="upcoming" role="tab" aria-selected="false">Upcoming</button>
+          <button type="button" class="ay-btn ay-btn--outline" data-filter="ongoing" role="tab" aria-selected="false">Ongoing</button>
+          <button type="button" class="ay-btn ay-btn--outline" data-filter="completed" role="tab" aria-selected="false">Completed</button>
+        </div>
+
+        <div class="row g-4" data-project-grid>
+
+          <div class="col-md-6 col-lg-4" data-status="ongoing" data-aos="fade-up">
+            <article class="ay-project-card">
+              <a href="/project-details/" class="ay-project-card__media" aria-label="Explore AY Meridian Residences">
+                <img src="/assets/images/home/Appartments.png" alt="AY Meridian Residences — illuminated mid-rise apartment building at dusk with landscaped entrance" width="1672" height="941" loading="lazy" decoding="async">
+                <span class="ay-project-card__badge ay-project-card__badge--ongoing">Ongoing</span>
+              </a>
+              <div class="ay-project-card__body">
+                <h3 class="ay-project-card__name">AY Lake Avenue</h3>
+                <p class="ay-project-card__location"><i class="bi bi-geo-alt" aria-hidden="true"></i> Bendiganahalli, Huskur, Bengaluru</p>
+                <p class="ay-project-card__desc">Contemporary mid-rise residences wrapped in landscaped gardens, moments from the city&rsquo;s tech corridor.</p>
+                <a href="/project-details/" class="ay-project-card__link">Explore More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-status="completed" data-aos="fade-up" data-aos-delay="100">
+            <article class="ay-project-card">
+              <a href="/project-details/" class="ay-project-card__media" aria-label="Explore AY Palm Court Villas">
+                <img src="/assets/images/home/Villas.png" alt="AY Palm Court Villas — row of illuminated garden villas along a paved residential street at dusk" width="1672" height="941" loading="lazy" decoding="async">
+                <span class="ay-project-card__badge ay-project-card__badge--completed">Completed</span>
+              </a>
+              <div class="ay-project-card__body">
+                <h3 class="ay-project-card__name">AY Palm Court Villas</h3>
+                <p class="ay-project-card__location"><i class="bi bi-geo-alt" aria-hidden="true"></i>STRR, Bengaluru</p>
+                <p class="ay-project-card__desc">Gated garden villas with private courtyards, designed for families who want space without compromise.</p>
+                <a href="/project-details/" class="ay-project-card__link">Explore More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-status="upcoming" data-aos="fade-up" data-aos-delay="200">
+            <article class="ay-project-card">
+              <a href="/project-details/" class="ay-project-card__media" aria-label="Explore AY Green Acres">
+                <img src="/assets/images/home/Plots.png" alt="AY Green Acres — aerial masterplan of a plotted development with clubhouse, pool and sports courts" width="1536" height="1024" loading="lazy" decoding="async">
+                <span class="ay-project-card__badge ay-project-card__badge--upcoming">Upcoming</span>
+              </a>
+              <div class="ay-project-card__body">
+                <h3 class="ay-project-card__name">AY Green Acres</h3>
+                <p class="ay-project-card__location"><i class="bi bi-geo-alt" aria-hidden="true"></i> Huskur, Bengaluru</p>
+                <p class="ay-project-card__desc">Freehold residential plots within a master-planned community, complete with a clubhouse and sports courts.</p>
+                <a href="/project-details/" class="ay-project-card__link">Explore More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= OUR PROMISE ================= -->
+    <section class="ay-section bg-linen" aria-labelledby="promise-heading">
+      <div class="container-ay row g-5 align-items-center">
+
+        <div class="col-lg-6" data-aos="fade-right">
+          <p class="ay-eyebrow">Our Commitment</p>
+          <h2 id="promise-heading">Our Promise</h2>
+          <p class="lead">
+            Every AY Premium Homes address is backed by a simple commitment — uncompromising
+            craftsmanship, complete transparency, and a team that stays accountable long after
+            the keys are handed over. We don&rsquo;t just build homes; we build trust that lasts
+            a lifetime.
+          </p>
+        </div>
+
+        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+          <div class="ay-promise__media">
+            <img class="ay-promise__img" src="/assets/images/home/outPromise.png" alt="A couple hanging a keepsake on the door of their new AY Premium Homes address" width="1920" height="1080" loading="lazy" decoding="async">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= WHY CHOOSE US ================= -->
+    <section class="ay-section bg-champagne-beige" aria-labelledby="why-us-heading">
+      <div class="container-ay">
+        <p class="ay-eyebrow">Why AY Premium Homes</p>
+        <h2 id="why-us-heading" data-aos="fade-up">Why Choose AY Premium Homes</h2>
+
+        <div class="ay-why-grid">
+
+          <div class="ay-why-card" data-aos="fade-up">
+            <i class="bi bi-geo-alt ay-why-card__icon" aria-hidden="true"></i>
+            <h3 class="ay-why-card__title">Prime Locations</h3>
+            <p class="ay-why-card__desc">Addresses chosen for connectivity, growth and everyday convenience.</p>
+          </div>
+
+          <div class="ay-why-card" data-aos="fade-up" data-aos-delay="100">
+            <i class="bi bi-gem ay-why-card__icon" aria-hidden="true"></i>
+            <h3 class="ay-why-card__title">Premium Quality</h3>
+            <p class="ay-why-card__desc">Uncompromising materials and finishes, inspected at every stage.</p>
+          </div>
+
+          <div class="ay-why-card" data-aos="fade-up" data-aos-delay="200">
+            <i class="bi bi-clock-history ay-why-card__icon" aria-hidden="true"></i>
+            <h3 class="ay-why-card__title">Timely Delivery</h3>
+            <p class="ay-why-card__desc">A disciplined build schedule that respects your move-in date.</p>
+          </div>
+
+          <div class="ay-why-card" data-aos="fade-up" data-aos-delay="300">
+            <i class="bi bi-eye ay-why-card__icon" aria-hidden="true"></i>
+            <h3 class="ay-why-card__title">Transparent Process</h3>
+            <p class="ay-why-card__desc">Clear pricing, clear paperwork, and a single point of contact throughout.</p>
+          </div>
+
+          <div class="ay-why-card" data-aos="fade-up" data-aos-delay="400">
+            <i class="bi bi-tree ay-why-card__icon" aria-hidden="true"></i>
+            <h3 class="ay-why-card__title">Sustainable Living</h3>
+            <p class="ay-why-card__desc">Landscaped greens, natural light and energy-conscious design.</p>
+          </div>
+
+          <div class="ay-why-card" data-aos="fade-up" data-aos-delay="500">
+            <i class="bi bi-heart ay-why-card__icon" aria-hidden="true"></i>
+            <h3 class="ay-why-card__title">Customer First</h3>
+            <p class="ay-why-card__desc">A dedicated advisory team, from your first visit to your final walkthrough.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LIFESTYLE / AMENITIES ================= -->
+    <section class="ay-section bg-gold-lattice" aria-labelledby="lifestyle-heading">
+      <div class="container-ay">
+        <p class="ay-eyebrow">Lifestyle</p>
+        <h2 id="lifestyle-heading" data-aos="fade-up">Amenities Designed for Everyday Luxury</h2>
+
+        <div class="ay-amenity-grid">
+
+          <div class="ay-amenity-card" data-aos="fade-up">
+            <div class="ay-amenity-card__overlay">
+              <i class="bi bi-building ay-amenity-card__icon" aria-hidden="true"></i>
+              <h3 class="ay-amenity-card__name">Clubhouse</h3>
+            </div>
+          </div>
+
+          <div class="ay-amenity-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="ay-amenity-card__overlay">
+              <i class="bi bi-water ay-amenity-card__icon" aria-hidden="true"></i>
+              <h3 class="ay-amenity-card__name">Swimming Pool</h3>
+            </div>
+          </div>
+
+          <div class="ay-amenity-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="ay-amenity-card__overlay">
+              <i class="bi bi-activity ay-amenity-card__icon" aria-hidden="true"></i>
+              <h3 class="ay-amenity-card__name">Gym</h3>
+            </div>
+          </div>
+
+          <div class="ay-amenity-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="ay-amenity-card__overlay">
+              <i class="bi bi-balloon ay-amenity-card__icon" aria-hidden="true"></i>
+              <h3 class="ay-amenity-card__name">Children Play Area</h3>
+            </div>
+          </div>
+
+          <div class="ay-amenity-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="ay-amenity-card__overlay">
+              <i class="bi bi-flower1 ay-amenity-card__icon" aria-hidden="true"></i>
+              <h3 class="ay-amenity-card__name">Landscaped Gardens</h3>
+            </div>
+          </div>
+
+          <div class="ay-amenity-card" data-aos="fade-up" data-aos-delay="500">
+            <div class="ay-amenity-card__overlay">
+              <i class="bi bi-shield-check ay-amenity-card__icon" aria-hidden="true"></i>
+              <h3 class="ay-amenity-card__name">24x7 Security</h3>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONIALS (Swiper) ================= -->
+    <section class="ay-section ay-testimonials bg-silk-gold" aria-labelledby="testimonials-heading">
+      <div class="container-ay">
+        <p class="ay-eyebrow">Client Voices</p>
+        <h2 id="testimonials-heading">Testimonials</h2>
+
+        <div class="swiper js-testimonial-slider" data-aos="fade-up">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <figure class="ay-testimonial">
+                <i class="bi bi-quote ay-testimonial__mark" aria-hidden="true"></i>
+                <div class="ay-testimonial__stars" role="img" aria-label="Rated 5 out of 5 stars">
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                </div>
+                <blockquote class="ay-testimonial__quote">
+                  <p>From our first site visit to the day we got our keys, the AY team made everything effortless. The finish quality exceeded what we imagined &mdash; this truly feels like a forever home.</p>
+                </blockquote>
+                <figcaption class="ay-testimonial__author">
+                  <span class="ay-testimonial__avatar" aria-hidden="true">RD</span>
+                  <span class="ay-testimonial__author-info">
+                    <cite class="ay-testimonial__name">Ramesh &amp; Deepa Iyer</cite>
+                    <span class="ay-testimonial__location"><i class="bi bi-geo-alt" aria-hidden="true"></i> STRR, Bengaluru</span>
+                  </span>
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="swiper-slide">
+              <figure class="ay-testimonial">
+                <i class="bi bi-quote ay-testimonial__mark" aria-hidden="true"></i>
+                <div class="ay-testimonial__stars" role="img" aria-label="Rated 5 out of 5 stars">
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                </div>
+                <blockquote class="ay-testimonial__quote">
+                  <p>What stood out was the transparency. Every commitment on paper was honoured on site, right down to the last fitting &mdash; rare to find in real estate today.</p>
+                </blockquote>
+                <figcaption class="ay-testimonial__author">
+                  <span class="ay-testimonial__avatar" aria-hidden="true">AN</span>
+                  <span class="ay-testimonial__author-info">
+                    <cite class="ay-testimonial__name">Anjali Nair</cite>
+                    <span class="ay-testimonial__location"><i class="bi bi-geo-alt" aria-hidden="true"></i> STRR, Bengaluru</span>
+                  </span>
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="swiper-slide">
+              <figure class="ay-testimonial">
+                <i class="bi bi-quote ay-testimonial__mark" aria-hidden="true"></i>
+                <div class="ay-testimonial__stars" role="img" aria-label="Rated 5 out of 5 stars">
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                </div>
+                <blockquote class="ay-testimonial__quote">
+                  <p>Our children have grown up in the gardens here. Choosing AY Premium Homes wasn&rsquo;t just an investment &mdash; it was the best decision we made for our family.</p>
+                </blockquote>
+                <figcaption class="ay-testimonial__author">
+                  <span class="ay-testimonial__avatar" aria-hidden="true">VS</span>
+                  <span class="ay-testimonial__author-info">
+                    <cite class="ay-testimonial__name">Vikram &amp; Sneha Rao</cite>
+                    <span class="ay-testimonial__location"><i class="bi bi-geo-alt" aria-hidden="true"></i> STRR, Bengaluru</span>
+                  </span>
+                </figcaption>
+              </figure>
+            </div>
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA STRIP ================= -->
+    <!-- <section class="ay-section bg-soft-gold-gradient" aria-labelledby="cta-heading">
+      <div class="container-ay text-center">
+        <h2 id="cta-heading">Speak with our advisory team</h2>
+        <button type="button" class="ay-btn ay-btn--primary" data-enquiry-trigger>Enquire Now</button>
+      </div>
+    </section> -->
+
+  </main>
+
+  <!-- Shared footer mount point -->
+  <div id="site-footer"></div>
+
+  <!-- Shared enquiry modal mount point -->
+  <div id="enquiry-modal-root"></div>
+
+  <!-- Shared floating buttons mount point -->
+  <div id="floating-buttons-root"></div>
+
+  <!-- Vendor JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- Project JS -->
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/swiper.js"></script>
+  <script src="/assets/js/email.js"></script>
+</body>
+</html>

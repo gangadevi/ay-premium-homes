@@ -1,0 +1,92 @@
+/* =========================================================================
+   AY PREMIUM HOMES — RESPONSIVE RULES
+   Mobile-first overrides layered on top of style.css tokens.
+   Breakpoints follow Bootstrap 5.3 grid tiers for consistency with the
+   utility classes used across markup.
+   ========================================================================= */
+
+/* ---- ≤ 991.98px : tablet & mobile — header shrinks, nav becomes the
+   hamburger + fullscreen overlay (desktop nav is hidden via .d-lg-block) --- */
+@media (max-width: 991.98px) {
+  :root { --header-height: 70px; }
+
+  .ay-header__logo { height: 150px; }
+
+  .ay-page-hero { min-height: 95vh; }
+
+  .ay-stats__grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-lg) var(--space-sm); }
+  .ay-why-grid { grid-template-columns: repeat(2, 1fr); }
+  .ay-amenity-grid { grid-template-columns: repeat(2, 1fr); }
+  .ay-journey-grid { grid-template-columns: repeat(2, 1fr); }
+  .ay-values-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .ay-footer__grid {
+    grid-template-columns: 1fr 1fr;
+    row-gap: var(--space-lg);
+  }
+
+  /* Investment journey timeline (see /nri/index.html) — the single-row
+     desktop layout (style.css) doesn't fit six columns below tablet
+     width, so collapse it back to a left-aligned vertical line. */
+  .ay-timeline {
+    display: block;
+    max-width: 720px;
+    text-align: left;
+  }
+  .ay-timeline::before {
+    inset-block: 6px;
+    inset-inline: 27px auto;
+    width: 2px;
+    height: auto;
+    background: linear-gradient(180deg, var(--color-gold), var(--color-gold-dim) 85%, transparent);
+  }
+  .ay-timeline__step {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    padding-bottom: var(--space-lg);
+  }
+  .ay-timeline__step:last-child { padding-bottom: 0; }
+  .ay-timeline__node { margin-bottom: 0; margin-inline-end: var(--space-md); }
+  .ay-timeline__content { padding-top: 0.6rem; text-align: left; }
+  .ay-timeline__title { font-size: var(--fs-h3); }
+  .ay-timeline__desc { font-size: var(--fs-body); }
+}
+
+/* ---- ≤ 767.98px : mobile ---- */
+@media (max-width: 767.98px) {
+  .ay-footer__grid { grid-template-columns: 1fr; }
+
+  .ay-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+  }
+
+  .ay-float-stack { right: var(--space-xs); bottom: var(--space-xs); }
+  .ay-float-btn { width: 46px; height: 46px; font-size: 1.1rem; }
+  .ay-journey-grid { grid-template-columns: 1fr; }
+  .ay-vision-grid { grid-template-columns: 1fr; }
+
+  .ay-section { padding-block: var(--space-lg); }
+  .ay-page-hero { padding-block: var(--space-xl) var(--space-lg); min-height: 82vh; }
+}
+
+/* ---- ≤ 575.98px : small phones ---- */
+@media (max-width: 575.98px) {
+  .container-ay { padding-inline: var(--space-sm); }
+  .ay-header__logo { height: 110px; }
+  .ay-why-grid { grid-template-columns: 1fr; }
+  .ay-values-grid { grid-template-columns: 1fr; }
+}
+
+/* ---- Reduced motion — always respected ---- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
