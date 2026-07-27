@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Careers | AY Premium Homes</title>
-  <link rel="icon" type="image/png" href="/assets/images/logo/Web_AY_Logo.png">
   <meta name="description" content="Join the team building AY Premium Homes' luxury developments.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,8 +14,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/responsive.css">
+  <!-- Base path config + shared favicon/project CSS (see assets/js/config.js) -->
+  <script src="../assets/js/config.js"></script>
 </head>
 <body data-page="careers">
 
@@ -74,8 +73,19 @@
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-  <script src="/assets/js/main.js"></script>
-  <script src="/assets/js/swiper.js"></script>
-  <script src="/assets/js/email.js"></script>
+  <!-- Project JS (loaded through BASE_PATH so this works unmodified on
+       localhost, a GitHub Pages project site, and a custom domain — see
+       assets/js/config.js) -->
+  <script>
+    (function () {
+      var BASE_PATH = window.BASE_PATH || "";
+      ["/assets/js/main.js", "/assets/js/swiper.js", "/assets/js/email.js"].forEach(function (path) {
+        var script = document.createElement("script");
+        script.src = BASE_PATH + path;
+        script.async = false;
+        document.body.appendChild(script);
+      });
+    })();
+  </script>
 </body>
 </html>

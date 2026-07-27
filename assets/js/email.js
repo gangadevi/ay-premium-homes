@@ -82,7 +82,19 @@
     bindForm(enquiryForm, EMAILJS_CONFIG.enquiryTemplateId);
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
+  // Loaded through a dynamically-created <script> tag (see the BASE_PATH
+  // loader at the bottom of each page), so it can finish downloading
+  // after DOMContentLoaded has already fired — check document.readyState
+  // rather than assume the event is still to come.
+  function onDomReady(callback) {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", callback);
+    } else {
+      callback();
+    }
+  }
+
+  onDomReady(() => {
     const ready = initEmailJS();
     if (!ready) console.warn("[AY] EmailJS SDK not found — form submission disabled.");
 

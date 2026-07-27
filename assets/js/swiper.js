@@ -71,7 +71,19 @@
     });
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
+  // Loaded through a dynamically-created <script> tag (see the BASE_PATH
+  // loader at the bottom of each page), so it can finish downloading
+  // after DOMContentLoaded has already fired — check document.readyState
+  // rather than assume the event is still to come.
+  function onDomReady(callback) {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", callback);
+    } else {
+      callback();
+    }
+  }
+
+  onDomReady(() => {
     initHeroSlider();
     initProjectGallery();
     initProjectDetailGallery();

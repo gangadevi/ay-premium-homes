@@ -13,11 +13,16 @@
 (function () {
   "use strict";
 
+  // Set by assets/js/config.js (see BASE_PATH detection there). Falls back
+  // to "" so this keeps working even on a page that hasn't picked up the
+  // config.js <script> tag yet.
+  const BASE_PATH = window.BASE_PATH || "";
+
   const PARTIALS = [
-    { selector: "#site-header", url: "/partials/header.html" },
-    { selector: "#site-footer", url: "/partials/footer.html" },
-    { selector: "#enquiry-modal-root", url: "/partials/enquiry-modal.html" },
-    { selector: "#floating-buttons-root", url: "/partials/floating-buttons.html" },
+    { selector: "#site-header", url: BASE_PATH + "/partials/header.html" },
+    { selector: "#site-footer", url: BASE_PATH + "/partials/footer.html" },
+    { selector: "#enquiry-modal-root", url: BASE_PATH + "/partials/enquiry-modal.html" },
+    { selector: "#floating-buttons-root", url: BASE_PATH + "/partials/floating-buttons.html" },
   ];
 
   /**
@@ -44,6 +49,41 @@
 
   function loadAllPartials() {
     return Promise.all(PARTIALS.map(loadPartial));
+  }
+
+  /* ---- Base-path correction for image sources -------------------------
+     Partial markup (header/footer logos) and every page's own <img> tags
+     are written as root-relative paths ("/assets/..."), which assume the
+     site is served from "/". On a GitHub Pages project site it isn't —
+     prefix every one with BASE_PATH once the partials (and therefore the
+     header/footer logos) exist in the DOM. No-op on localhost/custom
+     domain, where BASE_PATH is "". */
+  function rewriteImagePaths() {
+    if (!BASE_PATH) return;
+
+    document.querySelectorAll('img[src^="/"]').forEach((img) => {
+      const src = img.getAttribute("src");
+      if (src.startsWith(BASE_PATH + "/")) return;
+      img.setAttribute("src", BASE_PATH + src);
+    });
+  }
+
+  /* ---- Base-path correction for internal navigation links --------------
+     Same reasoning as rewriteImagePaths() above: every internal <a> —
+     header/footer nav, CTA buttons, project card links, breadcrumbs,
+     across every page and partial — is written as a root-relative href
+     ("/about/", "/project-details/", "/", etc.). Prefix each one with
+     BASE_PATH once the partials exist in the DOM. External links (http/
+     https), in-page anchors (#...), mailto:, and tel: links don't start
+     with "/" and are untouched. No-op on localhost/custom domain. */
+  function rewriteInternalLinks() {
+    if (!BASE_PATH) return;
+
+    document.querySelectorAll('a[href^="/"]').forEach((a) => {
+      const href = a.getAttribute("href");
+      if (href.startsWith(BASE_PATH + "/")) return;
+      a.setAttribute("href", BASE_PATH + href);
+    });
   }
 
   /* ---- Fullscreen overlay nav ----------------------------------------
@@ -243,9 +283,26 @@
     });
   }
 
-  /* ---- Bootstrap sequence --------------------------------------------- */
-  document.addEventListener("DOMContentLoaded", () => {
+  /* ---- Bootstrap sequence -----------------------------------------------
+     main.js is now loaded through a dynamically-created <script> tag (see
+     the BASE_PATH loader at the bottom of each page) rather than a plain
+     parser-inserted one, so it can finish downloading *after* the
+     document has already finished parsing — in which case
+     "DOMContentLoaded" has already fired and would never come again.
+     Guard against that by checking document.readyState and running
+     immediately if parsing is already done. */
+  function onDomReady(callback) {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", callback);
+    } else {
+      callback();
+    }
+  }
+
+  onDomReady(() => {
     loadAllPartials().then(() => {
+      rewriteImagePaths();
+      rewriteInternalLinks();
       initOverlayNav();
       initHeaderScrollState();
       initActiveNavLink();
